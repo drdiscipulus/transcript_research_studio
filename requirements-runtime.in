@@ -1,0 +1,10 @@
+# Validated runtime baseline for every release profile.
+# Platform-specific Torch wheels are selected by scripts/compile_runtime_locks.ps1.
+av==17.0.1
+faster-whisper==1.2.1
+huggingface-hub==0.36.2
+pyannote.audio==4.0.4
+setuptools==80.9.0
+torch==2.8.0
+torchaudio==2.8.0
+xmlschema==4.3.2

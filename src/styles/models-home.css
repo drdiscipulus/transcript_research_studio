@@ -1,0 +1,333 @@
+/* ==========================================================================
+   Models Page
+   ========================================================================== */
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.models-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.62rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+.models-page-grid > .section-card {
+  height: 100%;
+  min-width: 0;
+}
+
+.models-page-grid .advanced-token-row {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.models-page-grid .advanced-token-actions.inline {
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-column: 1;
+  justify-self: start;
+}
+
+.models-token-row {
+  width: 100%;
+}
+
+.models-page-grid .models-token-row {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.models-token-control-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+.models-token-control-row .text-input,
+.models-token-test-button {
+  height: var(--control-height);
+  min-height: var(--control-height);
+}
+
+.models-token-test-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.models-setup-column {
+  display: grid;
+  align-content: start;
+  width: min(100%, 31rem);
+}
+
+.model-list {
+  display: grid;
+  width: 100%;
+  border: 1px solid var(--app-border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.model-list-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) auto;
+  gap: 0.62rem;
+  align-items: center;
+  padding: 0.48rem 0.6rem;
+  background: color-mix(in srgb, var(--app-panel-soft) 54%, transparent);
+  border-top: 1px solid var(--app-border-subtle);
+}
+
+.model-list-row strong {
+  font-weight: 600;
+}
+
+.model-row-actions {
+  display: grid;
+  grid-template-columns: 9rem 8.5rem;
+  gap: 0.55rem;
+  align-items: center;
+  justify-content: stretch;
+}
+
+.model-row-actions .model-state {
+  justify-self: center;
+}
+
+.model-action-button {
+  width: 8.5rem;
+  min-height: 2.1rem;
+  padding: 0.36rem 0.62rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.model-list-row:first-child {
+  border-top: 0;
+}
+
+.model-list-row span {
+  color: var(--app-text-muted);
+  font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
+
+.model-list-main {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.pyannote-model-list {
+  margin: 0.72rem 0;
+}
+
+.secondary-button.models-refresh-button {
+  min-width: 5.4rem;
+  min-height: 2.1rem;
+  padding: 0.36rem 0.68rem;
+}
+
+.model-state {
+  color: var(--app-text-muted);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-size: 0.75rem;
+}
+
+.model-state.downloaded {
+  color: var(--app-success);
+}
+
+.model-state.incomplete {
+  color: var(--app-warning);
+}
+
+:root[data-theme="dark"] .model-state.downloaded {
+  color: var(--app-success);
+}
+
+.models-status-box {
+  display: grid;
+  gap: 0.28rem;
+  margin-top: 0.62rem;
+  padding: 0.62rem 0.68rem;
+  border-radius: 4px;
+  background: var(--app-panel-soft);
+  border: 1px solid var(--app-border);
+  min-width: 0;
+}
+
+.models-status-box strong {
+  color: var(--app-text);
+  line-height: 1.2;
+}
+
+.model-status-panel span {
+  color: var(--app-text-muted);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.status-pill {
+  min-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  border: 1px solid var(--app-border);
+}
+
+.status-pill.ready {
+  color: var(--app-success);
+  background: var(--app-success-soft);
+  border-color: var(--app-success-border);
+}
+
+.status-pill.warning {
+  color: var(--app-warning);
+  background: var(--app-warning-bg);
+  border-color: var(--app-warning-border);
+}
+
+:root[data-theme="dark"] .status-pill.ready {
+  color: var(--app-success);
+  background: var(--app-success-soft);
+  border-color: var(--app-success-border);
+}
+
+.model-link-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
+  justify-content: space-between;
+  margin: 0.72rem 0;
+}
+
+.model-link-row .secondary-button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Home And Recommendation Panels
+   ========================================================================== */
+
+.home-main-title {
+  color: var(--app-text);
+  font-size: 1.18rem;
+  font-weight: 600;
+}
+
+.home-section-title {
+  color: var(--app-text);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.hardware-grid {
+  align-items: stretch;
+}
+
+.hardware-scan-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.62rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  background: var(--app-panel-soft);
+  color: var(--app-text-muted);
+  font-size: 0.82rem;
+}
+
+.hardware-scan-feedback.error {
+  border-color: var(--app-danger-border);
+  color: var(--app-danger);
+}
+
+.recommendation-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.provider-status-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.recommendation-card {
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.hardware-card,
+.recommendation-card,
+.provider-status-row .summary-panel {
+  background: var(--app-panel-soft);
+  border-color: var(--app-border);
+}
+
+.recommendation-card strong {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.recommendation-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.recommendation-list p {
+  display: grid;
+  gap: 0.1rem;
+  margin: 0;
+  color: var(--app-text);
+}
+
+.recommendation-list span {
+  color: var(--app-text-muted);
+  font-size: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.hardware-card {
+  grid-template-rows: auto minmax(2.75rem, auto) minmax(1.3rem, auto);
+}
+
+.hardware-value {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  min-width: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.hardware-meta {
+  min-height: 1.3rem;
+}
+
+.hardware-meta-spacer {
+  visibility: hidden;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.6rem;
+}

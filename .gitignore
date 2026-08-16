@@ -1,0 +1,72 @@
+# Dependencies
+node_modules/
+
+# Frontend build output
+dist/
+
+# Tauri/Rust generated output
+src-tauri/target/
+src-tauri/gen/
+
+# Release packages and portable exports
+release-artifacts/
+*.app/
+*.dmg
+*.pkg
+*.msi
+*.exe
+*.zip
+.transcript_research_studio_portable
+transcript_research_studio_data/
+
+# Python environments, build products, and caches
+.venv*/
+.release-envs/
+venv/
+backend/.venv/
+backend/*.egg-info/
+*.egg-info/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local runtime data and logs
+input/
+output/
+work/
+demo/
+*.log
+logs/
+cache/
+.cache/
+
+# macOS / Windows filesystem noise
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+
+# Editor and local assistant state
+.idea/
+.vscode/
+.agents/
+
+# Local environment and signing secrets
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.cer
+*.certSigningRequest
+*.csr
+*.mobileprovision
+*.provisionprofile
+notarytool-profile*.json

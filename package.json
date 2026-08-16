@@ -1,0 +1,77 @@
+{
+  "name": "transcript-research-studio",
+  "private": true,
+  "version": "1.0.0-beta.2",
+  "description": "Local-first transcription, editing, qualitative coding, and transcript analysis for researchers.",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drdiscipulus/transcript-research-studio.git"
+  },
+  "homepage": "https://github.com/drdiscipulus/transcript-research-studio",
+  "bugs": {
+    "url": "https://github.com/drdiscipulus/transcript-research-studio/issues"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src tests/frontend vite.config.ts vitest.config.ts --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test:frontend": "vitest run",
+    "test:frontend:watch": "vitest",
+    "frontend:check": "npm run lint && npm run typecheck && npm run test:frontend && node scripts/check_frontend_structure.mjs",
+    "prepare:bundle": "node scripts/prepare_bundle_resources.mjs",
+    "export:artifacts": "node scripts/export_release_artifacts.mjs",
+    "package:artifacts": "node scripts/package_release_artifacts.mjs",
+    "release:verify": "node scripts/verify_release_artifacts.mjs",
+    "release:scripts:check": "node scripts/check_release_scripts.mjs",
+    "docs:check": "node scripts/check_docs_consistency.mjs",
+    "security:check": "node scripts/check_security_posture.mjs",
+    "node:verify": "node --test tests/node_engine.test.mjs && node scripts/verify_node_install.mjs",
+    "version:check": "node scripts/check_version_consistency.mjs",
+    "runtime:windows:cpu": "node scripts/create_runtime_environment.mjs --profile=windows-cpu --recreate",
+    "runtime:windows:cuda": "node scripts/create_runtime_environment.mjs --profile=windows-cuda --recreate",
+    "runtime:macos:arm64": "node scripts/create_runtime_environment.mjs --profile=macos-arm64 --recreate",
+    "preview": "vite preview",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "node scripts/build_tauri_release.mjs",
+    "macos:sign": "node scripts/sign_macos_bundle.mjs",
+    "macos:notarize": "node scripts/notarize_macos_bundle.mjs",
+    "release:macos:preflight": "node scripts/preflight_macos_release.mjs",
+    "release:macos": "node scripts/build_macos_release.mjs",
+    "release:macos:qualification": "node scripts/run_qualification_release.mjs release:macos",
+    "release:macos:final": "node scripts/run_final_release.mjs release:macos",
+    "release:build": "npm run tauri:build && npm run export:artifacts && npm run package:artifacts && npm run release:verify",
+    "release:qualification": "node scripts/run_qualification_release.mjs release:build",
+    "release:final": "node scripts/run_final_release.mjs release:build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.11.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "wavesurfer.js": "^7.12.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@tauri-apps/cli": "2.11.4",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.4",
+    "eslint": "10.8.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.9.0",
+    "jsdom": "26.1.0",
+    "msw": "2.10.4",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "8.66.0",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Transcript Research Studio",
+  "version": "1.0.0-beta.2",
+  "identifier": "de.jensschueler.transcript-research-studio",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run prepare:bundle && npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "title": "Transcript Research Studio",
+        "width": 1380,
+        "height": 920,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": [
+      "gen/runtime/bundle-manifest.json",
+      "gen/runtime/python-runtime/**/*",
+      "gen/runtime/backend/**/*"
+    ],
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico",
+      "icons/icon.icns"
+    ],
+    "macOS": {
+      "hardenedRuntime": true,
+      "minimumSystemVersion": "12.0"
+    }
+  }
+}

@@ -1,0 +1,333 @@
+/* ==========================================================================
+   Transcription Page Specific Controls
+   ========================================================================== */
+
+.transcription-page-header {
+  align-items: flex-start;
+}
+
+.transcription-top-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(460px, 1.3fr);
+  gap: 0.85rem;
+}
+
+.transcription-top-grid-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.top-equal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.transcription-form-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  row-gap: var(--form-row-gap);
+  column-gap: var(--form-column-gap);
+  align-items: end;
+}
+
+.transcription-form-grid .field-group {
+  gap: var(--field-gap);
+}
+
+.transcription-io-options-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: var(--form-row-gap);
+  column-gap: var(--form-column-gap);
+  align-items: end;
+  margin-bottom: 0.72rem;
+}
+
+.transcription-io-control-pair {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: var(--form-column-gap);
+  align-items: end;
+  min-width: 0;
+}
+
+.transcription-field {
+  min-width: 0;
+}
+
+.transcription-field-compact {
+  width: min(100%, 19rem);
+  justify-self: start;
+}
+
+.transcription-field-wide {
+  width: 100%;
+}
+
+.transcription-field-formats {
+  justify-self: start;
+  width: min(100%, 19rem);
+}
+
+.transcription-field-formats .transcription-format-grid {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.transcription-source-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 11.5rem;
+}
+
+.transcription-source-switch .segment {
+  min-width: 0;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.paragraph-rules-compact {
+  display: grid;
+  grid-template-columns: 8.2rem max-content;
+  gap: 0.5rem;
+  align-items: end;
+  justify-content: space-between;
+  width: min(100%, 19rem);
+  justify-self: start;
+}
+
+.paragraph-rule-field {
+  width: 100%;
+  justify-self: stretch;
+}
+
+.paragraph-pause-field {
+  width: 8.2rem;
+  min-width: 8.2rem;
+}
+
+.paragraph-pause-field .field-label-with-help {
+  white-space: nowrap;
+}
+
+.paragraph-rule-field .text-input {
+  height: var(--control-height);
+  min-height: var(--control-height);
+  padding: 0.48rem 0.62rem;
+  border-radius: 4px;
+}
+
+.paragraph-pause-control-row {
+  display: grid;
+  grid-template-columns: max-content 3.6rem max-content;
+  gap: 0.28rem;
+  align-items: center;
+  justify-content: start;
+}
+
+.paragraph-pause-control-field {
+  width: 9.8rem;
+  min-width: 9.8rem;
+}
+
+.paragraph-pause-control-row .text-input {
+  height: var(--control-height);
+  min-height: var(--control-height);
+}
+
+.paragraph-pause-checkbox {
+  height: var(--control-height);
+}
+
+.paragraph-pause-unit {
+  color: var(--app-text-muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Transcription Format Controls
+   ========================================================================== */
+
+.transcription-format-grid {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.transcription-setup-error {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.transcription-hardware-status,
+.transcription-hardware-retry {
+  color: var(--app-text-muted);
+  font-size: 0.75rem;
+}
+
+.transcription-hardware-status.error,
+.transcription-hardware-retry {
+  color: var(--app-danger);
+}
+
+.transcription-hardware-retry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.transcription-plain-checkbox {
+  display: inline-flex;
+  height: var(--control-height);
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--app-text);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.transcription-plain-checkbox input {
+  width: 0.95rem;
+  height: 0.95rem;
+  margin: 0;
+  accent-color: var(--app-accent);
+}
+
+.transcription-format-chip {
+  width: 4.2rem;
+  height: var(--control-height);
+  justify-content: flex-start;
+  padding: 0 0.42rem;
+  border-radius: 4px;
+  gap: 0.28rem;
+  box-sizing: border-box;
+}
+
+.transcription-format-chip span {
+  font-size: 0.82rem;
+  line-height: 1.1;
+}
+
+.transcription-format-chip input {
+  margin: 0;
+}
+
+.advanced-form-grid .transcription-field-compact {
+  width: 100%;
+  min-width: 0;
+}
+
+.advanced-speaker-settings {
+  display: grid;
+  grid-template-columns:
+    minmax(6.5rem, 0.72fr)
+    minmax(8.5rem, 0.9fr)
+    minmax(6.5rem, 0.72fr)
+    minmax(12rem, 1.3fr)
+    minmax(10rem, 1.05fr);
+  gap: var(--form-column-gap);
+  align-items: end;
+  margin-top: var(--form-row-gap);
+}
+
+.advanced-speaker-settings .transcription-field-compact {
+  width: 100%;
+  min-width: 0;
+}
+
+.transcription-advanced-accordion {
+  margin-top: 0.78rem;
+  padding-top: 0.68rem;
+  border-top: 1px solid var(--app-border-subtle);
+}
+
+.transcription-advanced-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--app-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.transcription-advanced-chevron {
+  color: var(--app-text-muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  transform: rotate(0deg);
+  transition: transform 140ms ease;
+}
+
+.transcription-advanced-accordion.open .transcription-advanced-chevron {
+  transform: rotate(90deg);
+}
+
+.transcription-advanced-summary:focus-visible {
+  outline: 2px solid var(--app-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.transcription-advanced-summary-label {
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.transcription-advanced-customized-badge {
+  padding: 0.14rem 0.4rem;
+  border-radius: 999px;
+  background: var(--app-accent-soft);
+  color: var(--app-text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.transcription-advanced-accordion-content {
+  padding-top: 0.8rem;
+}
+
+.advanced-settings-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: var(--form-row-gap);
+}
+
+.advanced-settings-footer .helper-text {
+  margin: 0;
+}
+
+.advanced-token-row {
+  display: grid;
+  grid-template-columns: minmax(22rem, 34rem) auto;
+  gap: 0.75rem;
+  align-items: end;
+  margin: 0.55rem 0 0.5rem;
+  justify-content: start;
+}
+
+.advanced-token-field {
+  min-width: 0;
+  width: min(100%, 34rem);
+}
+
+.advanced-token-actions {
+  display: grid;
+  gap: 0.65rem;
+  align-content: end;
+}
+
+.advanced-token-actions.inline {
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  justify-self: start;
+}

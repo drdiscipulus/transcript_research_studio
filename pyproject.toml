@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transcript-research-sidecar"
+version = "1.0.0b2"
+description = "Python sidecar for Transcript Research Studio"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "GPL-3.0-or-later" }
+dependencies = [
+    "av==17.0.1",
+    "faster-whisper==1.2.1",
+    "huggingface-hub==0.36.2",
+    "pyannote.audio==4.0.4",
+    "torch==2.8.0",
+    "torchaudio==2.8.0",
+    "xmlschema==4.3.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/drdiscipulus/transcript-research-studio"
+Repository = "https://github.com/drdiscipulus/transcript-research-studio"
+Issues = "https://github.com/drdiscipulus/transcript-research-studio/issues"
+
+[tool.setuptools]
+packages = ["backend", "backend.sidecar_server", "backend.transcription_worker"]
+
+[tool.setuptools.package-data]
+"backend.sidecar_server" = ["resources/refi_qda/*.xsd", "resources/refi_qda/*.md"]

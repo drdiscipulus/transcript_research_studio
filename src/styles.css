@@ -1,0 +1,10 @@
+@import "./styles/tokens.css";
+@import "./styles/shell.css";
+@import "./styles/shared.css";
+@import "./styles/models-home.css";
+@import "./styles/transcription.css";
+@import "./styles/analysis.css";
+@import "./styles/help.css";
+@import "./styles/editor.css";
+@import "./styles/codes.css";
+@import "./styles/responsive.css";

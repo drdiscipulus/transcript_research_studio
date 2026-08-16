@@ -1,0 +1,505 @@
+/* ==========================================================================
+   Responsive Rules
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .summary-grid,
+  .progress-grid,
+  .models-grid,
+  .models-page-grid,
+  .scan-summary,
+  .run-action-row,
+  .provider-status-row,
+  .recommendation-grid,
+  .workflow-folder-grid,
+  .editor-input-grid,
+  .editor-loaded-summary,
+  .prompting-form-grid,
+  .transcription-io-options-grid,
+  .transcription-io-columns,
+  .transcription-top-grid,
+  .info-grid,
+  .help-grid,
+  .codes-workspace,
+  .codes-management-grid,
+  .codes-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .codes-reader-panel {
+    grid-column: auto;
+  }
+
+  .codes-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .codes-evidence-workspace {
+    position: static;
+    top: auto;
+    max-height: none;
+    padding-right: 0;
+    overflow-y: visible;
+    scrollbar-gutter: auto;
+  }
+
+  .codes-export-product-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .codes-context-action-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .transcription-io-control-pair {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+  }
+
+  .editor-controls-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prompt-setup-grid,
+  .prompt-setup-top-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prompt-setup-secondary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+
+  .transcription-top-grid-single {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .prompting-form-grid.prompting-model-settings-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .prompting-model-provider-field,
+  .prompting-model-model-field {
+    grid-column: span 3;
+  }
+
+  .prompting-model-number-field,
+  .prompting-model-refresh-field {
+    grid-column: span 2;
+  }
+
+  .codes-ai-settings-options-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .codes-ai-provider-field,
+  .codes-ai-model-field {
+    grid-column: span 3;
+  }
+
+  .codes-ai-number-field,
+  .codes-ai-refresh-field {
+    grid-column: span 2;
+  }
+
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.35rem;
+    align-self: stretch;
+    height: auto;
+    padding: 0.38rem 0.5rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--app-border);
+  }
+
+  .sidebar-nav {
+    display: flex;
+    gap: 0.25rem;
+    min-width: 0;
+    margin: 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 36px;
+    padding: 0.42rem 0.62rem;
+    white-space: nowrap;
+  }
+
+  .nav-item::before {
+    inset: auto 0.45rem 0.15rem;
+    width: auto;
+    height: 2px;
+  }
+
+  .nav-item .nav-status-badge {
+    margin-left: 0.15rem;
+  }
+
+  .sidebar-footer {
+    align-self: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar-theme-card.bare {
+    width: auto;
+    min-width: 8.4rem;
+    padding: 0.2rem 0.35rem 0.2rem 0.5rem;
+    border: 1px solid var(--app-border);
+    background: var(--app-panel-muted);
+  }
+
+  .sidebar-theme-error {
+    max-width: 13rem;
+  }
+
+  .page-header,
+  .section-heading {
+    flex-direction: column;
+  }
+
+  .action-row {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .codes-project-shell-top {
+    flex-direction: column;
+  }
+
+  .codes-project-actions {
+    justify-content: flex-start;
+  }
+
+  .codes-import-actions {
+    width: min(100%, 23.55rem);
+  }
+
+  .codes-transcript-toolbar-main {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .codes-transcript-toolbar-actions,
+  .codes-transcript-toolbar-meta {
+    flex-wrap: wrap;
+  }
+
+}
+
+@media (max-width: 720px) {
+  .content-panel {
+    padding: 0.68rem;
+  }
+
+  .sidebar {
+    padding: 0.34rem 0.42rem;
+  }
+
+  .summary-grid,
+  .progress-grid,
+  .models-grid,
+  .models-page-grid,
+  .scan-summary,
+  .run-action-row,
+  .provider-status-row,
+  .recommendation-grid,
+  .workflow-folder-grid,
+  .editor-input-grid,
+  .editor-loaded-summary,
+  .prompting-form-grid,
+  .advanced-form-grid,
+  .transcription-io-options-grid,
+  .transcription-io-columns,
+  .transcription-form-grid,
+  .info-grid,
+  .help-grid,
+  .codes-workspace,
+  .codes-management-grid,
+  .codes-summary-grid,
+  .codes-context-action-grid,
+  .transcription-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .codes-reader-panel {
+    grid-column: auto;
+  }
+
+  .codes-project-settings-grid,
+  .codes-ai-settings-options-grid,
+  .codes-reader-search-row,
+  .codes-reader-control-toolbar,
+  .codes-import-candidate,
+  .codes-export-result-row,
+  .codes-evidence-primary-filters,
+  .codes-quick-code-form {
+    grid-template-columns: 1fr;
+  }
+
+  .codes-ai-provider-field,
+  .codes-ai-model-field,
+  .codes-ai-number-field,
+  .codes-ai-refresh-field {
+    grid-column: auto;
+  }
+
+  .codes-ai-refresh-field .secondary-button {
+    width: 100%;
+  }
+
+  .prompting-form-grid.prompting-model-settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prompting-model-provider-field,
+  .prompting-model-model-field,
+  .prompting-model-number-field,
+  .prompting-model-refresh-field {
+    grid-column: auto;
+  }
+
+  .prompting-model-refresh-field .secondary-button {
+    width: 100%;
+  }
+
+  .codes-quick-code-error {
+    grid-column: auto;
+  }
+
+  .codes-import-reason {
+    grid-column: auto;
+  }
+
+  .codes-import-actions,
+  .codes-import-actions .codes-import-action-button {
+    width: 100%;
+  }
+
+  .codes-import-actions {
+    grid-template-columns: minmax(0, 1fr);
+    flex-basis: 100%;
+  }
+
+  .codes-import-preview-summary {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .codes-import-preview-summary .codes-import-counts {
+    width: 100%;
+    margin-left: 1.65rem;
+  }
+
+  .transcription-io-control-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .transcription-io-column + .transcription-io-column {
+    border-left: 0;
+    border-top: 1px solid var(--app-border);
+    padding-top: 1rem;
+    padding-left: 0;
+  }
+
+  .prompt-setup-grid,
+  .prompt-setup-top-grid,
+  .prompt-setup-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scan-table-head {
+    display: none;
+  }
+
+  .scan-table-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .advanced-token-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .advanced-token-actions.inline {
+    grid-auto-flow: row;
+    grid-auto-columns: unset;
+  }
+
+  .models-token-control-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sidebar-footer {
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .sidebar-theme-card.bare {
+    min-width: 9rem;
+  }
+
+  .service-recovery-banner,
+  .page-header,
+  .section-heading,
+  .modal-header {
+    align-items: stretch;
+  }
+
+  .service-recovery-banner,
+  .modal-header {
+    flex-direction: column;
+  }
+
+  .modal-backdrop {
+    padding: 0.5rem;
+  }
+
+  .modal-dialog {
+    max-height: calc(100vh - 1rem);
+    padding: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .model-list-row {
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
+  }
+
+  .model-row-actions {
+    grid-template-columns: minmax(8rem, 1fr) 8.5rem;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1000px) {
+  .advanced-form-grid,
+  .advanced-speaker-settings {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .transcription-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .transcription-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .editor-export-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .editor-export-row > .primary-button {
+    justify-self: start;
+  }
+
+  .advanced-form-grid,
+  .advanced-speaker-settings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .advanced-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .codes-selection-action.codes-evidence-capture-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .codes-evidence-capture-row > .action-row {
+    justify-content: flex-start;
+  }
+
+  .workflow-folder-card-inline .workflow-path-control-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .workflow-folder-card-double-browse .workflow-path-control-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow-folder-card-inline .path-input {
+    grid-column: 1 / -1;
+  }
+
+  .workflow-folder-card-inline .workflow-path-control-row .secondary-button {
+    width: 100%;
+  }
+
+  .transcript-editor-page .workflow-folder-card-inline .workflow-path-control-row .secondary-button {
+    width: 100%;
+  }
+
+  .model-link-row {
+    flex-wrap: wrap;
+  }
+
+  .model-link-row .secondary-button {
+    flex: 1 1 100%;
+    white-space: normal;
+  }
+
+  .paragraph-rules-compact {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .paragraph-pause-field,
+  .paragraph-pause-control-field {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .paragraph-pause-control-row {
+    grid-template-columns: max-content minmax(3.6rem, 1fr) max-content;
+  }
+
+  .paragraph-pause-control-row .text-input {
+    min-width: 0;
+  }
+
+  .advanced-speaker-settings {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}

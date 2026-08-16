@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Design Tokens
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+  font-family: "Segoe UI", "Aptos", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --app-bg: #eeeeee;
+  --app-text: #1f1f1f;
+  --app-text-muted: #616161;
+  --app-border: #d7d7d7;
+  --app-border-strong: #c2c2c2;
+  --app-border-subtle: #e0e0e0;
+  --app-panel: #f6f6f6;
+  --app-panel-soft: #eaeaea;
+  --app-panel-muted: #f1f1f1;
+  --app-input-bg: #fafafa;
+  --app-sidebar: #ededed;
+  --app-nav: #e3e3e3;
+  --app-nav-active: #e8f2ff;
+  --app-status-bg: #252526;
+  --app-status-text: #f3f3f3;
+  --app-button-secondary: #f3f3f3;
+  --app-button-secondary-hover: #e8e8e8;
+  --app-button-secondary-text: #242424;
+  --app-accent: #006ab1;
+  --app-accent-hover: #005a9e;
+  --app-accent-soft: rgba(0, 106, 177, 0.09);
+  --app-accent-border: rgba(0, 106, 177, 0.3);
+  --app-success: #107c10;
+  --app-success-soft: rgba(16, 124, 16, 0.1);
+  --app-success-border: rgba(16, 124, 16, 0.28);
+  --app-warning: #8a5a00;
+  --app-warning-bg: #fff8e5;
+  --app-warning-border: #ead89c;
+  --app-danger: #a4262c;
+  --app-danger-soft: rgba(164, 38, 44, 0.09);
+  --app-danger-border: rgba(164, 38, 44, 0.22);
+  --app-focus: #005ea8;
+  --app-focus-soft: rgba(0, 94, 168, 0.24);
+  --app-overlay: rgba(0, 0, 0, 0.56);
+  --app-elevation-dialog: 0 18px 55px rgba(0, 0, 0, 0.3);
+  --app-card-shadow: none;
+  --app-radius-sm: 4px;
+  --app-radius-md: 6px;
+  --control-height: 36px;
+  --field-gap: 0.2rem;
+  --form-row-gap: 0.44rem;
+  --form-column-gap: 0.72rem;
+  --section-padding-y: 0.68rem;
+  --section-padding-x: 0.82rem;
+  --run-square-size: 78px;
+  background: var(--app-bg);
+  color: var(--app-text);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --app-bg: #1f1f1f;
+  --app-text: #cccccc;
+  --app-text-muted: #9d9d9d;
+  --app-border: #3c3c3c;
+  --app-border-strong: #505050;
+  --app-border-subtle: #333333;
+  --app-panel: #242424;
+  --app-panel-soft: #2b2b2d;
+  --app-panel-muted: #222222;
+  --app-input-bg: #1f1f1f;
+  --app-sidebar: #181818;
+  --app-nav: #292929;
+  --app-nav-active: #37373d;
+  --app-status-bg: #111111;
+  --app-status-text: #e7e7e7;
+  --app-button-secondary: #2d2d30;
+  --app-button-secondary-hover: #3a3d41;
+  --app-button-secondary-text: #d4d4d4;
+  --app-accent: #0e639c;
+  --app-accent-hover: #1177bb;
+  --app-accent-soft: rgba(14, 99, 156, 0.16);
+  --app-accent-border: rgba(14, 99, 156, 0.42);
+  --app-success: #89d185;
+  --app-success-soft: rgba(137, 209, 133, 0.12);
+  --app-success-border: rgba(137, 209, 133, 0.28);
+  --app-warning: #cca700;
+  --app-warning-bg: rgba(204, 167, 0, 0.12);
+  --app-warning-border: rgba(204, 167, 0, 0.3);
+  --app-danger: #f48771;
+  --app-danger-soft: rgba(244, 135, 113, 0.12);
+  --app-danger-border: rgba(244, 135, 113, 0.28);
+  --app-focus: #75beff;
+  --app-focus-soft: rgba(117, 190, 255, 0.3);
+  --app-overlay: rgba(0, 0, 0, 0.68);
+  --app-elevation-dialog: 0 18px 55px rgba(0, 0, 0, 0.52);
+  --app-card-shadow: none;
+}
