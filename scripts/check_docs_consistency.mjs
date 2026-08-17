@@ -31,7 +31,6 @@ function assertNotContainsCaseInsensitive(fileName, content, phrase) {
 const helpPage = read("src/components/HelpPage.tsx");
 const userGuide = read("docs/user_guide.md");
 const technicalBackground = read("docs/technical_background.md");
-const releaseChecklist = read("docs/release_checklist.md");
 const readme = read("README.md");
 const backendReadme = read("backend/README.md");
 const packageManifest = JSON.parse(read("package.json"));
@@ -45,13 +44,10 @@ if (!prereleaseMatch) {
     `package.json version ${releaseVersion} must use the supported MAJOR.MINOR.PATCH-beta.NUMBER prerelease structure.`
   );
 }
-const [, major, minor, patch, betaNumber] = prereleaseMatch;
+const [, major, minor, patch] = prereleaseMatch;
 const stableVersion = `${major}.${minor}.${patch}`;
-const nextBetaVersion = `v${stableVersion}-beta.${Number(betaNumber) + 1}`;
 const releaseNotesPath = `docs/release_notes_${releaseVersion}.md`;
 const releaseNotes = read(releaseNotesPath);
-const canonicalCloneUrl = "https://github.com/drdiscipulus/transcript-research-studio.git";
-const canonicalCheckoutDirectory = "cd transcript-research-studio";
 const uiFiles = [
   ["src/components/TranscriptionPage.tsx", read("src/components/TranscriptionPage.tsx")],
   ["src/components/PromptingPage.tsx", read("src/components/PromptingPage.tsx")],
@@ -138,30 +134,6 @@ for (const [fileName, content] of [
   }
 }
 
-for (const [fileName, content] of [["docs/release_checklist.md", releaseChecklist]]) {
-  assertContains(fileName, content, canonicalCloneUrl);
-  assertContains(fileName, content, canonicalCheckoutDirectory);
-  for (const staleCheckoutReference of [
-    "<repo-url>",
-    "cd ai_transcription",
-    "cd ai_transcription_studio",
-    "https://github.com/drdiscipulus/ai_transcription_studio",
-    "ai_transcription_studio"
-  ]) {
-    assertNotContains(fileName, content, staleCheckoutReference);
-  }
-}
-
-for (const phrase of [
-  "backend smoke tests",
-  "sidecar health routes",
-  "mocked transcription batch",
-  "mocked Transcript Analysis run",
-  "npm run security:check"
-]) {
-  assertContains("docs/release_checklist.md", releaseChecklist, phrase);
-}
-
 for (const phrase of [
   "QDPX Beta",
   "does not import or round-trip QDPX",
@@ -218,23 +190,12 @@ for (const [fileName, content] of [
 for (const [fileName, content] of [
   ["README.md", readme],
   ["docs/user_guide.md", userGuide],
-  ["docs/release_checklist.md", releaseChecklist],
   [releaseNotesPath, releaseNotes]
 ]) {
   assertContains(fileName, content, releaseVersion);
   assertNotContains(fileName, content, "0.3.0");
 }
 assertContains(releaseNotesPath, releaseNotes, `Stable \`${stableVersion}\``);
-assertContains("docs/release_checklist.md", releaseChecklist, nextBetaVersion);
-
-for (const phrase of [
-  "QDPX Beta",
-  "manually import",
-  "exact claimed application and version",
-  "does not import or round-trip QDPX"
-]) {
-  assertContains("docs/release_checklist.md", releaseChecklist, phrase);
-}
 
 for (const phrase of [
   "Internal structure",

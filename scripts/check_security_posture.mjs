@@ -90,7 +90,6 @@ assertContains("README.md", "Transcription models are managed on the");
 assertContains("docs/user_guide.md", "Source transcript files stay untouched.");
 assertContains("docs/user_guide.md", "Keep the Windows portable package together");
 assertContains("docs/user_guide.md", "Hugging Face is contacted for explicit transcription model downloads");
-assertContains("docs/release_checklist.md", "npm run security:check");
 assertContains("docs/technical_background.md", "Security Posture");
 
 console.log("Security posture checks passed.");

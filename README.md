@@ -94,7 +94,6 @@ Current limitations include (well, it is beta):
 - [User Guide](docs/user_guide.md) — installation, workflows, settings, and troubleshooting
 - [Version 1.0 Beta 2 release notes](docs/release_notes_1.0.0-beta.2.md) — supported platforms, bug fixes, beta scope, and current limitations
 - [Technical Background](docs/technical_background.md) — architecture, data flow, and security boundaries
-- [Release Checklist](docs/release_checklist.md) — technical qualification and publication steps for maintainers
 
 ## Support and Maintenance
 
