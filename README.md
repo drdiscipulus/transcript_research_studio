@@ -78,7 +78,7 @@ Detailed setup and workflow instructions are available in the [User Guide](docs/
 
 ## Version 1.0 Beta 3
 
-The current version is **Version 1.0 Beta 3** (`1.0.0-beta.3`). Core transcription and transcript-editing workflows should be stable and work reliably. The other research features, including coding, codebook management, and Transcript Analysis, are still experimental and may have some rough edges.
+The current version is **Version 1.0 Beta 3** (`1.0.0-beta.3`). Core transcription and editing workflows should be stable. The other research features, including coding, codebook management, and Transcript Analysis, are still experimental and may have some rough edges.
 
 Current limitations include (well, it is beta):
 
