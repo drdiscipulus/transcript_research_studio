@@ -137,6 +137,11 @@ const bootstrap: RunScreenPayload = {
   browse_home_folder: "C:\\research",
   simple_options: {
     language: "auto",
+    language_options: [
+      { value: "auto", label: "Auto-Detect" },
+      { value: "de", label: "German" },
+      { value: "yue", label: "Cantonese", supported_models: ["large-v3", "large-v3-turbo"] }
+    ],
     output_mode: "transcribe",
     export_formats: ["xlsx"],
     transcript_layout: "file",
@@ -287,6 +292,18 @@ describe("useTranscriptionWorkspace", () => {
       ["medium", true]
     ]);
     expect(result.current.shell.browseHomeFolder).toBe("C:\\research");
+  });
+
+  it("returns to Auto-Detect when a model change makes Cantonese unavailable", async () => {
+    const { result } = renderHook(() => useTranscriptionWorkspace(workspaceOptions()));
+
+    await waitFor(() => expect(result.current.page.setup.state.loading).toBe(false));
+    act(() => result.current.page.setup.actions.setModelName("large-v3"));
+    act(() => result.current.page.setup.actions.setLanguage("yue"));
+    expect(result.current.page.setup.state.language).toBe("yue");
+
+    act(() => result.current.page.setup.actions.setModelName("medium"));
+    expect(result.current.page.setup.state.language).toBe("auto");
   });
 
   it("loads immediately with CPU while hardware is checking and adds CUDA without replacing a manual choice", async () => {

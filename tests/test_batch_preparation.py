@@ -92,6 +92,10 @@ def _scan_preview_files(input_folder: str, file_names: list[str]) -> ScanPreview
 
 
 class BatchPreparationTests(unittest.TestCase):
+    def test_prepare_batch_rejects_an_unsupported_language_before_scanning(self) -> None:
+        with self.assertRaisesRegex(ValueError, "supported transcription language"):
+            prepare_batch({"language": "not-a-language", "model_name": "small"})
+
     def test_normalizes_export_formats_layout_and_paragraph_options(self) -> None:
         self.assertEqual(normalize_export_formats(["xlsx", "docx", "xlsx", "bad", ""]), ["xlsx", "docx"])
         self.assertEqual(normalize_export_formats([]), ["xlsx"])

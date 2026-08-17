@@ -1258,7 +1258,7 @@ class EvidenceProjectTests(unittest.TestCase):
                 self.assertIn("documents/codebook.docx", names)
                 qdpx_name = next(name for name in names if name.endswith(".qdpx"))
                 manifest = json.loads(archive.read("manifest.json"))
-                self.assertEqual(manifest["export"]["app_version"], "1.0.0-beta.2")
+                self.assertEqual(manifest["export"]["app_version"], "1.0.0-beta.3")
                 self.assertEqual(manifest["counts"]["report_drafts"], 1)
                 self.assertIn("Transcript Research Studio", archive.read("README.txt").decode("utf-8"))
                 structured = json.loads(archive.read("structured_project.json"))

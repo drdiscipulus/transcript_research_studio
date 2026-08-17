@@ -2,6 +2,7 @@ import type {
   AccelerationOption,
   BatchRunSnapshot,
   HardwareSummary,
+  TranscriptionLanguageOption,
   TranscriptionModelOption
 } from "./api";
 
@@ -16,18 +17,17 @@ export type HomeRecommendationBlock = {
   note: string;
 };
 
-export const languageOptions = [
-  { value: "auto", label: "Auto-Detect" },
-  { value: "en", label: "English" },
-  { value: "de", label: "German" },
-  { value: "es", label: "Spanish" },
-  { value: "fr", label: "French" }
-];
-
 export const outputModes = [
   { value: "transcribe", label: "Transcribe" },
   { value: "translate", label: "Translate To English" }
 ];
+
+export function isTranscriptionLanguageAvailable(
+  option: TranscriptionLanguageOption,
+  modelName: string
+): boolean {
+  return !option.supported_models || option.supported_models.includes(modelName);
+}
 
 export const exportFormatOptions = ["xlsx", "csv", "json", "docx"];
 

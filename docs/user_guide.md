@@ -22,17 +22,17 @@ This makes it easier to go from raw recordings to structured transcript files an
 ### Project Information
 
 - **Author and maintainer:** Jens Schüler, Institute for Entrepreneurship & Innovation, University of Bayreuth, jens.schueler@uni-bayreuth.de
-- **Version:** Version 1.0 Beta 2 (`1.0.0-beta.2`)
+- **Version:** Version 1.0 Beta 3 (`1.0.0-beta.3`)
 - **License:** GNU GPL v3.0 or later / `GPL-3.0-or-later`
 
 ### Availability and Releases
 
-Qualified app packages are distributed through GitHub Releases rather than committed to the source repository. Version 1.0 Beta 2 (`1.0.0-beta.2`) defines separate portable Windows and Apple Silicon macOS packages. Obtain a package from GitHub Releases only after it has been published.
+Qualified app packages are distributed through GitHub Releases rather than committed to the source repository. Version 1.0 Beta 3 (`1.0.0-beta.3`) defines separate portable Windows and Apple Silicon macOS packages. Obtain a package from GitHub Releases only after it has been published.
 
-The `1.0.0-beta.2` Windows distribution specifies two portable variants:
+The `1.0.0-beta.3` Windows distribution specifies two portable variants:
 
-- **CPU**: `transcript_research_studio_1.0.0-beta.2_windows_x64_cpu_portable.zip`, smaller and suitable for the broadest range of Windows x64 machines.
-- **CUDA**: `transcript_research_studio_1.0.0-beta.2_windows_x64_cuda_portable.zip`, intended for Windows x64 systems with a supported NVIDIA GPU. Because it is large, its published distribution uses `.partNNN` files with a manifest and reassembly helper.
+- **CPU**: `transcript_research_studio_1.0.0-beta.3_windows_x64_cpu_portable.zip`, smaller and suitable for the broadest range of Windows x64 machines.
+- **CUDA**: `transcript_research_studio_1.0.0-beta.3_windows_x64_cuda_portable.zip`, intended for Windows x64 systems with a supported NVIDIA GPU. Because it is large, its published distribution uses `.partNNN` files with a manifest and reassembly helper.
 
 The Windows beta package is not code-signed. When you start a published Windows package, Windows may show a SmartScreen or "unknown publisher" warning. Only run binaries downloaded from this project's GitHub Releases page and verify the published SHA-256 checksum.
 
@@ -42,7 +42,7 @@ If Windows shows a warning and the app still does not appear after you choose to
 
 The macOS beta package is a portable, Developer ID signed and notarized Apple Silicon app bundle for `arm64` Macs running macOS 12 or later. Keep the extracted portable package together as one folder; it contains `Transcript Research Studio.app`, this user guide as `README.md`, a portable-mode marker, and a `transcript_research_studio_data/` folder for portable settings, logs, caches, and downloaded model files.
 
-The macOS release artifact is named `transcript_research_studio_1.0.0-beta.2_macos_arm64_portable.zip`. When it has been published, download it from GitHub Releases, verify its checksum, unzip it, keep the extracted folder together, and launch `Transcript Research Studio.app`.
+The macOS release artifact is named `transcript_research_studio_1.0.0-beta.3_macos_arm64_portable.zip`. When it has been published, download it from GitHub Releases, verify its checksum, unzip it, keep the extracted folder together, and launch `Transcript Research Studio.app`.
 
 This beta does not support Intel macOS, Apple MPS acceleration, Windows signing, installers, or runtime downloaders. Internal demo media is not included in public release packages.
 
@@ -261,6 +261,10 @@ Use **CPU** when CUDA is unavailable, unstable, or not worth occupying for the c
 The language setting for the transcription run.
 
 **Auto-detect** is convenient when files may contain different languages or when you are unsure. If all files use the same known language, selecting it directly can make runs more stable and can reduce avoidable language-detection mistakes.
+
+Open the language list and type a language name or code to filter the complete faster-whisper language catalog. Auto-Detect remains pinned at the top. The multilingual Tiny, Base, Small, and Medium models provide 99 language choices. Large V3 and Large V3 Turbo additionally provide Cantonese. Whisper accuracy varies by language and model, so review transcripts carefully, especially for languages with less training data.
+
+Speaker Detection does not reduce the available language choices. Pyannote processes the audio separately after transcription and does not receive the selected transcription language.
 
 #### Task
 

@@ -9,6 +9,7 @@ import {
   scanInputSource,
   type AppSettings,
   type ScanPreview,
+  type TranscriptionLanguageOption,
   type TranscriptionModelOption
 } from "../lib/api";
 import {
@@ -16,7 +17,7 @@ import {
   defaultParagraphOptions,
   exportFormatOptions,
   folderParent,
-  languageOptions,
+  isTranscriptionLanguageAvailable,
   normalizeParagraphPauseInput,
   outputModes,
   preferredOutputPath,
@@ -181,6 +182,7 @@ export function useTranscriptionWorkspace(options: UseTranscriptionWorkspaceOpti
   const [bootstrapError, setBootstrapError] = useState<string | null>(null);
   const [browseHomeFolder, setBrowseHomeFolder] = useState("");
   const [modelOptions, setModelOptionsState] = useState<TranscriptionModelOption[]>([]);
+  const [languageOptions, setLanguageOptions] = useState<TranscriptionLanguageOption[]>([]);
   const [accelerationOptions, setAccelerationOptions] = useState<ReturnType<typeof buildAccelerationOptions>>([]);
   const [trustedScan, setTrustedScanState] = useState<TrustedScan | null>(null);
   const [isScanning, setIsScanningState] = useState(false);
@@ -341,6 +343,7 @@ export function useTranscriptionWorkspace(options: UseTranscriptionWorkspaceOpti
         setBrowseHomeFolder(payload.browse_home_folder);
 
         const bootstrapModels = sanitizeModelOptions(payload.simple_options.model_options);
+        setLanguageOptions(payload.simple_options.language_options);
         const authoritativeModels = modelsStatusOptions(modelsStatusRef.current) ?? bootstrapModels;
         modelOptionsRef.current = authoritativeModels;
         setModelOptionsState(authoritativeModels);
@@ -869,7 +872,18 @@ export function useTranscriptionWorkspace(options: UseTranscriptionWorkspaceOpti
         clearOutputFolder,
         openPath: openLocalPath,
         setOutputOrganization: (value) => { updateSetup((current) => ({ ...current, outputOrganization: value })); },
-        setModelName: (value) => { updateSetup((current) => ({ ...current, modelName: value })); },
+        setModelName: (value) => {
+          updateSetup((current) => {
+            const selectedLanguage = languageOptions.find((option) => option.value === current.language);
+            const languageSupported = !selectedLanguage
+              || isTranscriptionLanguageAvailable(selectedLanguage, value);
+            return {
+              ...current,
+              modelName: value,
+              language: languageSupported ? current.language : "auto"
+            };
+          });
+        },
         setAcceleration: (value) => {
           accelerationEditedRef.current = true;
           updateSetup((current) => ({ ...current, acceleration: value }));

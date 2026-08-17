@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "transcript-research-sidecar"
-version = "1.0.0b2"
+version = "1.0.0b3"
 description = "Python sidecar for Transcript Research Studio"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"

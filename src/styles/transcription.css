@@ -73,6 +73,130 @@
   gap: 0;
 }
 
+.language-combobox {
+  position: relative;
+  min-width: 0;
+}
+
+.language-combobox-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-combobox-trigger > span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.language-combobox-trigger:disabled {
+  cursor: not-allowed;
+}
+
+.language-combobox-caret {
+  flex: 0 0 auto;
+  width: 0.38rem;
+  height: 0.38rem;
+  margin-right: 0.08rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  color: var(--app-text-muted);
+  transform: rotate(45deg) translateY(-0.1rem);
+}
+
+.language-combobox-popup {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 0.25rem);
+  right: auto;
+  left: 0;
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  gap: 0.35rem;
+  padding: 0.4rem;
+  border: 1px solid var(--app-border);
+  border-radius: 4px;
+  background: var(--app-panel);
+  box-shadow: 0 0.45rem 1rem rgb(0 0 0 / 14%);
+}
+
+.language-combobox-search-label {
+  color: var(--app-text-muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.language-combobox-options {
+  display: grid;
+  gap: 0.2rem;
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+.language-combobox-options button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.6rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.42rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--app-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-combobox-options button.has-description {
+  row-gap: 0.12rem;
+}
+
+.language-combobox-options button:hover,
+.language-combobox-options button.active,
+.language-combobox-options button[aria-selected="true"] {
+  border-color: var(--app-border);
+  background: var(--app-panel-soft);
+}
+
+.language-combobox-options button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.language-combobox-option-label,
+.language-combobox-option-code {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.language-combobox-option-code,
+.language-combobox-option-description {
+  color: var(--app-text-muted);
+  font-size: 0.75rem;
+}
+
+.language-combobox-option-description {
+  grid-column: 1 / -1;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.language-combobox-empty {
+  padding: 0.55rem;
+  color: var(--app-text-muted);
+  text-align: center;
+}
+
 .transcription-source-switch {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

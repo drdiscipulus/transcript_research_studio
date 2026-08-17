@@ -78,9 +78,9 @@ Models are not bundled. Download transcription models from **Models**. For Trans
 
 Detailed setup and workflow instructions are available in the [User Guide](docs/user_guide.md).
 
-## Version 1.0 Beta 2
+## Version 1.0 Beta 3
 
-The current version is **Version 1.0 Beta 2** (`1.0.0-beta.2`). Its main transcription, editing, coding, model-management, and analysis workflows are available for testing with real research projects before the stable Version 1.0 release.
+The current **Version 1.0 Beta 3** (`1.0.0-beta.3`) provides the main transcription, editing, coding, model-management, and analysis workflows for testing before the stable Version 1.0 release.
 
 Current limitations include (well, it is beta):
 
@@ -94,7 +94,7 @@ Current limitations include (well, it is beta):
 ## Documentation
 
 - [User Guide](docs/user_guide.md) — installation, workflows, settings, and troubleshooting
-- [Version 1.0 Beta 2 release notes](docs/release_notes_1.0.0-beta.2.md) — supported platforms, bug fixes, beta scope, and current limitations
+- [Version 1.0 Beta 3 release notes](docs/release_notes_1.0.0-beta.3.md) — supported platforms, language-selection update, beta scope, and current limitations
 - [Technical Background](docs/technical_background.md) — architecture, data flow, and security boundaries
 
 ## Support and Maintenance

@@ -5,6 +5,7 @@ import type {
   HardwareScanSnapshot,
   ModelsStatus,
   ScanPreview,
+  TranscriptionLanguageOption,
   TranscriptionModelOption
 } from "./api";
 import type { TranscriptLayout } from "./workflowUtils";
@@ -62,7 +63,7 @@ export type TranscriptionSetupState = {
   hardwareRetryable: boolean;
   hardwareRequestError: string | null;
   language: string;
-  languageOptions: TranscriptionSelectOption[];
+  languageOptions: TranscriptionLanguageOption[];
   outputMode: string;
   outputModes: TranscriptionSelectOption[];
   transcriptLayout: TranscriptLayout;

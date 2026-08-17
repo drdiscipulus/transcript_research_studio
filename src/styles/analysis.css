@@ -495,6 +495,8 @@
 .analysis-focus-input {
   min-height: var(--control-height);
   height: var(--control-height);
+  padding-block: 0.38rem;
+  line-height: 1.25;
   resize: vertical;
 }
 

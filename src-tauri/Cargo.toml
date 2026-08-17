@@ -1,6 +1,6 @@
 [package]
 name = "transcript_research_studio"
-version = "1.0.0-beta.2"
+version = "1.0.0-beta.3"
 description = "Desktop shell for Transcript Research Studio"
 authors = ["Jens Schüler"]
 license = "GPL-3.0-or-later"

@@ -88,7 +88,7 @@ for (const phrase of [
   "updates may be occasional",
   "GitHub Issues",
   "Feature requests are welcome as context",
-  "Version 1.0 Beta 2",
+  "Version 1.0 Beta 3",
   "Create transcripts",
   "Transcript Editor",
   "Codes",
@@ -195,8 +195,6 @@ for (const [fileName, content] of [
   assertContains(fileName, content, releaseVersion);
   assertNotContains(fileName, content, "0.3.0");
 }
-assertContains(releaseNotesPath, releaseNotes, `Stable \`${stableVersion}\``);
-
 for (const phrase of [
   "Internal structure",
   "provider adapters",

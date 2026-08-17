@@ -932,6 +932,8 @@
 .codes-research-focus {
   height: var(--control-height);
   min-height: var(--control-height);
+  padding-block: 0.38rem;
+  line-height: 1.25;
   overflow-y: hidden;
   resize: vertical;
 }

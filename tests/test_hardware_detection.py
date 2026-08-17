@@ -151,6 +151,11 @@ class HardwareDetectionTests(unittest.TestCase):
         self.assertNotIn("hardware", payload)
         self.assertNotIn("acceleration_options", payload["simple_options"])
         self.assertEqual(payload["simple_options"]["acceleration"], "cpu")
+        self.assertEqual(payload["simple_options"]["language_options"][0], {
+            "value": "auto",
+            "label": "Auto-Detect",
+        })
+        self.assertEqual(len(payload["simple_options"]["language_options"]), 101)
 
     def test_speaker_probe_does_not_import_pyannote_audio(self) -> None:
         fake_torch = SimpleNamespace(

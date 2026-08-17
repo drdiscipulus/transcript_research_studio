@@ -27,6 +27,7 @@ from .batch_preparation import (
 from .run_hardware import HardwareSummary, hardware_scan_manager
 from .run_scan import ScanExclusion, ScanItem, ScanPreview, scan_input_folder, scan_input_source
 from .settings_store import load_settings
+from .transcription_languages import normalize_transcription_language, transcription_language_options
 from .transcription_models import is_model_cached_locally
 
 DEFAULT_TRANSCRIPTION_MODEL = "small"
@@ -89,6 +90,7 @@ def build_run_screen_payload() -> dict[str, Any]:
             },
             "model_name": DEFAULT_TRANSCRIPTION_MODEL,
             "acceleration": "cpu",
+            "language_options": transcription_language_options(),
             "model_options": _build_transcription_model_options(),
         },
         "batch_name": default_batch_name(),
@@ -122,11 +124,11 @@ def prepare_batch(request_payload: dict[str, Any]) -> PreparedBatch:
         if output_organization == "combined_file" or output_naming_mode == "override"
         else default_batch_name()
     )
-    language = str(request_payload.get("language", "auto")).strip() or "auto"
     output_mode = str(request_payload.get("output_mode", "transcribe")).strip() or "transcribe"
     transcript_layout = normalize_transcript_layout(request_payload.get("transcript_layout"))
     paragraph_options = normalize_paragraph_options(request_payload.get("paragraph_options"))
     model_name = _normalize_transcription_model_name(request_payload.get("model_name"))
+    language = normalize_transcription_language(request_payload.get("language"), model_name=model_name)
     acceleration = _normalize_acceleration_choice(
         request_payload.get("acceleration"),
         hardware_scan_manager.ready_summary(),

@@ -5,12 +5,13 @@ import { WorkflowPathField } from "./WorkflowPathField";
 import type { BatchRunSnapshot, ScanPreview } from "../lib/api";
 import type { TranscriptionPageContract } from "../lib/transcriptionWorkspaceContracts";
 import { TranscriptionCancelDialog } from "./transcription/TranscriptionCancelDialog";
+import { LanguageCombobox } from "./transcription/LanguageCombobox";
 
 const transcriptionFieldHelpText = {
   model:
     "Chooses one of the faster-whisper models already downloaded on the Models page. Download or delete models there before starting transcription.",
   acceleration: "Chooses which hardware to use for transcription. GPU is usually faster; CPU works on most systems.",
-  language: "Choose the spoken language manually or use auto-detect. Setting it explicitly can improve speed and stability.",
+  language: "Use Auto-Detect or search the complete faster-whisper language list. Setting a known language explicitly can improve speed and stability.",
   task: "Transcribe keeps the original spoken language. Translate creates an English transcript instead.",
   outputOrganization:
     "Separate files creates one transcript per recording. Combined file collects all successful recordings into one file for each selected export format.",
@@ -451,13 +452,14 @@ export function TranscriptionPage({ setup, scan, run }: TranscriptionPageContrac
 
               <div className="field-group transcription-field transcription-field-compact">
                 <FieldLabelWithHelp label="Language" helpText={transcriptionFieldHelpText.language} htmlFor="transcription-language" />
-                <select id="transcription-language" className="text-input" value={language} onChange={(event) => setupActions.setLanguage(event.target.value)} disabled={configurationLocked}>
-                  {languageOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
+                <LanguageCombobox
+                  id="transcription-language"
+                  value={language}
+                  options={languageOptions}
+                  modelName={modelName}
+                  disabled={configurationLocked || runScreenLoading}
+                  onChange={setupActions.setLanguage}
+                />
               </div>
 
               <div className="field-group transcription-field transcription-field-compact">

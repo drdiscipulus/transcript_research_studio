@@ -570,7 +570,7 @@ export function HelpPage() {
           <h5>Acceleration</h5>
           <p>The runtime path used for faster-whisper transcription, such as CPU or NVIDIA / CUDA.</p>
           <h5>Language</h5>
-          <p><strong>Auto-detect</strong> is the normal default. Select a language directly if you already know it.</p>
+          <p><strong>Auto-Detect</strong> is the normal default. Open the language list and type a name or language code to filter all languages supported by the selected faster-whisper model. Selecting a known language can reduce detection mistakes. Cantonese requires Large V3 or Large V3 Turbo. Speaker Detection does not restrict the language list.</p>
           <h5>Task</h5>
           <p><strong>Transcribe</strong> keeps the source language. <strong>Translate To English</strong> translates recognized speech to English.</p>
           <h5>Transcript Structure</h5>

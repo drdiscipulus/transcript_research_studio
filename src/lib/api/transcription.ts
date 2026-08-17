@@ -12,6 +12,7 @@ export type SuggestedFolders = {
 
 export type SimpleOptions = {
   language: string;
+  language_options: TranscriptionLanguageOption[];
   output_mode: string;
   export_formats: string[];
   transcript_layout: string;
@@ -19,6 +20,13 @@ export type SimpleOptions = {
   model_name: string;
   acceleration: string;
   model_options: TranscriptionModelOption[];
+};
+
+export type TranscriptionLanguageOption = {
+  value: string;
+  label: string;
+  supported_models?: string[];
+  description?: string;
 };
 
 export type ParagraphOptions = {

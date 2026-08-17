@@ -53,7 +53,10 @@ function InputOutputHarness({
         hardwareRetryable,
         hardwareRequestError,
         language: "auto",
-        languageOptions: [],
+        languageOptions: [
+          { value: "auto", label: "Auto-Detect" },
+          { value: "de", label: "German" }
+        ],
         outputMode: "transcribe",
         outputModes: [],
         transcriptLayout: "file",

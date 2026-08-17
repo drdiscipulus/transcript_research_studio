@@ -609,7 +609,7 @@
 .workflow-folder-card .text-input {
   height: var(--control-height);
   min-height: var(--control-height);
-  padding: 0.52rem 0.72rem;
+  padding: 0.38rem 0.72rem;
 }
 
 .workflow-folder-card .field-action-row {
@@ -717,19 +717,19 @@
 .transcription-form-grid .text-input {
   height: var(--control-height);
   min-height: var(--control-height);
-  padding: 0.46rem 0.62rem;
+  padding: 0.38rem 0.62rem;
 }
 
 .prompting-form-grid .text-input {
   height: var(--control-height);
   min-height: var(--control-height);
-  padding: 0.46rem 0.62rem;
+  padding: 0.38rem 0.62rem;
 }
 
 .advanced-form-grid .text-input {
   height: var(--control-height);
   min-height: var(--control-height);
-  padding: 0.46rem 0.62rem;
+  padding: 0.38rem 0.62rem;
 }
 
 .text-input {
@@ -749,9 +749,14 @@ input.text-input {
   height: var(--control-height);
 }
 
+input.text-input {
+  padding: 0.38rem 0.62rem;
+  line-height: 1.25;
+}
+
 select.text-input:not([multiple]) {
-  padding: 0.22rem 2rem 0.22rem 0.62rem;
-  line-height: 1.35;
+  padding: 0 2rem 0 0.62rem;
+  line-height: normal;
   white-space: nowrap;
 }
 
