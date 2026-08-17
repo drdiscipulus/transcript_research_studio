@@ -4,8 +4,6 @@ Transcript Research Studio is a local desktop app for researchers who work with 
 
 Under the hood, Transcript Research Studio uses [faster-whisper](https://github.com/SYSTRAN/faster-whisper) for local transcription and, optionally, [pyannote.audio](https://github.com/pyannote/pyannote-audio) with the [Community-1 speaker diarization model](https://huggingface.co/pyannote/speaker-diarization-community-1) to distinguish speaker turns. These components are brought together in a straightforward graphical interface, so no programming knowledge or command-line experience is required.
 
-**Beta status**: Core transcription and transcript-editing workflows should be stable and work reliably. Research features such as coding and codebook management are still experimental and may have some rough edges.
-
 ![Transcript Research Studio Transcription workspace](docs/assets/transcription-workspace.png)
 
 ## Who It Is For
@@ -80,7 +78,7 @@ Detailed setup and workflow instructions are available in the [User Guide](docs/
 
 ## Version 1.0 Beta 3
 
-The current **Version 1.0 Beta 3** (`1.0.0-beta.3`) provides the main transcription, editing, coding, model-management, and analysis workflows for testing before the stable Version 1.0 release.
+The current version is **Version 1.0 Beta 3** (`1.0.0-beta.3`). Core transcription and transcript-editing workflows should be stable and work reliably. The other research features, including coding, codebook management, and Transcript Analysis, are still experimental and may have some rough edges.
 
 Current limitations include (well, it is beta):
 
