@@ -187,7 +187,7 @@ Themes have a name, color, description, note, and one or more code assignments. 
 
 ### AI Assistance
 
-The AI assistant uses the same local provider options as Transcript Analysis: Ollama or LM Studio. The provider must already be running and have a local model available.
+The AI assistant uses the same [local AI providers and models](#local-ai-providers-and-models) as Transcript Analysis. The provider must already be running and have a local model available.
 
 Configure **Provider**, **Model**, **Temperature**, and **Timeout** in **AI Assistant Settings** below Project Settings. The app loads provider and model information only when this accordion is expanded or an AI action is invoked; opening a coding project alone performs no provider request. Temperature and timeout default to `0` and `180` seconds. Prompts for Evidence, Codes, Note, Codebook, and Themes can be customized per project without changing the protected response schema or source-validation rules.
 
@@ -459,34 +459,30 @@ Built-in analyses include:
 
 Interview Review does not assess honesty or claim that participant statements are factually false.
 
-### Providers and Models
+### Local AI Providers and Models
 
-Transcript Research Studio supports two local Transcript Analysis providers:
+Transcript Research Studio uses optional local language models in two areas:
+
+- The **Codes AI assistant** can suggest evidence passages and codes, draft analytical notes, and help draft or refine codebook entries and themes.
+- **Transcript Analysis** can create overviews, research-focused analyses, interview reviews, and reusable custom analyses from transcript files.
+
+Both areas use the same local provider configuration. Supported providers are:
 
 - **Ollama**
 - **LM Studio**
 
-These providers are **not included** in the app. They run separately on your machine. The app only checks whether they are available and then uses their locally available models for Transcript Analysis.
+These providers are separate applications and are **not included** with Transcript Research Studio. You must install one of them yourself and download or otherwise make at least one language model available through that provider.
 
-This means:
+Transcript Research Studio does not communicate with the provider's desktop window directly. It connects to the provider's local HTTP API and reads the models currently available there:
 
-- you install Ollama or LM Studio separately
-- you download or make available the local models there
-- Transcript Research Studio then accesses those local models through the provider
+- **Ollama:** Start the Ollama application or service and keep its API available at `127.0.0.1:11434`. If necessary, start it with `ollama serve`. Download at least one model using Ollama before refreshing the provider list in Transcript Research Studio.
+- **LM Studio:** Download a model, open **Developer**, start the local server, and keep it at `127.0.0.1:1234`. The selected model must be available through that server.
 
-The app does not talk to the Ollama or LM Studio desktop windows directly. It looks for their local HTTP APIs on this computer, so the provider API server must be running before models can appear.
-
-For **Ollama**, start the Ollama app or service and make sure its local API is available at `127.0.0.1:11434`. If the service is not running, start Ollama from the app or with `ollama serve`, then download at least one model with Ollama. The app checks Ollama model status through the local API and sends prompts to that same local service.
-
-For **LM Studio**, load a model, open the **Developer** or local server view, and toggle **Start Server**. Keep the server on the default local address `127.0.0.1:1234`. The app reads LM Studio models from that local server and sends prompts through its OpenAI-compatible chat endpoint.
-
-Keep both providers bound to localhost for this app. Network-exposed provider addresses are not used by Transcript Research Studio.
-
-If no provider is running or no local models are available, Transcript Analysis cannot start.
+Provider access is limited to loopback addresses on the same computer. Do not expose either server to your local network or the internet for Transcript Research Studio. If no provider is running or no model is available through its API, the optional AI actions cannot start. Transcription, transcript editing, manual coding, and exports remain usable without Ollama or LM Studio.
 
 ### Choosing Models Carefully
 
-When choosing a local LLM for Transcript Analysis, keep your machine’s hardware in mind.
+When choosing a local LLM for AI assistance or Transcript Analysis, keep your machine's hardware in mind.
 
 As a general rule:
 

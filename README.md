@@ -24,11 +24,19 @@ The Transcript Editor lets you correct wording, speaker names, timestamps, and s
 
 ### Code qualitative material
 
-Codes tab lets you select passages, create codes, organize themes, and write notes. Reopen projects later or export them for reporting and further work. An optional QDPX Beta export supports exchange with compatible qualitative-analysis tools.
+The Codes area lets you select passages, create codes, organize themes, and write notes. Optional local AI assistance can suggest evidence and codes, draft notes, and help draft or refine codebook entries and themes. Suggestions remain under researcher control. Reopen projects later or export them for further work, including optional QDPX Beta exchange with compatible qualitative-analysis tools.
 
 ### Analyze transcripts with a local language model
 
-Transcript Analysis creates overviews, research-focused analyses, interview reviews, or reusable custom analyses. It uses models that run locally via Ollama or LM Studio and never changes the source transcripts. You must install Ollama or LM Studio yourself and download the models you want to use. The app is just connecting to these services through their local API interface.
+Transcript Analysis can create overviews, research-focused analyses, interview reviews, or reusable custom analyses. It creates separate result files through a local language model and leaves source transcripts unchanged. Results are reviewable research support rather than definitive findings.
+
+### Set up optional local AI assistance
+
+The optional AI features in **Codes** and **Transcript Analysis** use language models provided through [Ollama](https://ollama.com/) or [LM Studio](https://lmstudio.ai/). Transcript Research Studio installs neither providers nor their models. Install one provider, add a suitable local model, and keep its local API running while using AI features.
+
+The app looks for Ollama at `http://127.0.0.1:11434` and LM Studio at `http://127.0.0.1:1234`. Ollama normally provides its API while its application or service is running. In LM Studio, open **Developer**, start the local server, and keep it on port `1234`. Transcript Research Studio then detects the models made available by that provider and sends requests only to the selected local model.
+
+These connections are restricted to `localhost`. The providers do not need to be exposed to the local network or the internet, and the app has no cloud-AI fallback.
 
 ### Manage transcription models
 
