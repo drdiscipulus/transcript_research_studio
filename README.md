@@ -6,6 +6,8 @@ Under the hood, Transcript Research Studio uses [faster-whisper](https://github.
 
 **Beta status**: Core transcription and transcript-editing workflows should be stable and work reliably. Research features such as coding and codebook management are still experimental and may have some rough edges.
 
+![Transcript Research Studio Transcription workspace](docs/assets/transcription-workspace.png)
+
 ## Who It Is For
 
 Transcript Research Studio is particularly useful for researchers who use qualitative material. It can also support anyone who wants to process recordings locally instead of uploading them to an online transcription or analysis service.
